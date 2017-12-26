@@ -1,5 +1,7 @@
 
 def countmixix(ixlist,maxix):
+    # on each call count elements in ixlist up towards maxix one step, no element must overtake the other
+    # e.g. countmixix([0,0,0],3) -> [0,0,1],[0,0,2],[0,0,3],[0,1,1],[0,1,2],...[3,3,3]
     i = len(ixlist)-1
     while (i >= 0) and (ixlist[i] == maxix):
         i -= 1
@@ -19,12 +21,12 @@ def mixin(alist,blist):
     else:
         shortl,longl = blist,alist
     yield shortl+longl
-    r = [None]*(len(alist)+len(blist))
-    mixix = [0]*len(shortl)
-    while countmixix(mixix,len(longl)):
+    r = [None]*(len(alist)+len(blist)) # preallocate resulting list
+    mixix = [0]*len(shortl) # for each shortl element: between which elmnts of longl will it go
+    while countmixix(mixix,len(longl)): # generate one new distribution
         rx,lx,sx = 0,0,0
         mx = 0
-        while rx < len(r):
+        while rx < len(r): # construct result list by mixing in shortl elmnts between slices of longl
             while (sx < len(mixix)) and (mx == mixix[sx]):
                 r[rx] = shortl[sx]
                 rx,sx = rx+1,sx+1
