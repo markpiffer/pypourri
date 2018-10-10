@@ -16,8 +16,9 @@ def kickout_reorder(a_list,kickout_ix):
         n -= 1
 
 mylist = list(range(0,10))
+print("mylist looks like:",mylist)
 kicked_outs = [0,3,1,9]
-print(list(mylist[i] for i in kicked_outs ))
+print("These are removed:",list(mylist[i] for i in kicked_outs ))
 kickout_reorder(mylist,kicked_outs)
-print(mylist)
-print(mylist[:-len(kicked_outs)])
+print("mylist looks now like: ",mylist)
+print("valid part of mylist:",mylist[:-len(kicked_outs)])
