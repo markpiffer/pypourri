@@ -3,7 +3,7 @@ A collection of Python code that proved useful over the years
 
 - Partially ordered permutation
 
-  From a list of elements [a,b,c,1,2] create all permutations where a,b,c,d assume arbitrary positions and 1,2,3 assume positions so that their (1,2's) relative position is preserved. E.g. [c,1,2,a,b] or [1,a,2,b,c] but *never* [**2,1**,a,b,c]
+  From a list of elements [a,b,c,1,2] create all permutations where a,b,c,d assume arbitrary positions and 1,2 assume positions so that their (1,2's) relative position is preserved. E.g. [c,1,2,a,b] or [1,a,2,b,c] but *never* [**2,1**,a,b,c]
   
 - Shrink (delete parts of an) array
 
