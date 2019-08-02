@@ -7,7 +7,7 @@ A collection of Python code that proved useful over the years
   
 - **kickout_unordered**: Shrink (delete parts of an) array
 
-  In a list [0,1,2,3,4,5] when deleting 1 and 3, instead of copying [2,3,4,5] over [1,2,3,4] and then [4,5] over [3,4] (or even creating a new list), overwrite elements 1 and 3 selecetively with 4 and 5. This is an optimization routine where you sacrifice list order for speed.
+  When deleting elements from a list in Python, the built-in `del` function usually copies later elements over the deleted element, thus yielding O(k\*n) performance for k non-adjacent deletions: in list [0,1,2,3,4,5] when deleting 1 and 3, copy [2,3,4,5] over [1,2,3,4] and then [4,5] over [3,4]. In the special case where the resulting list doesn't need to be ordered, it is possible to use this O(n) algorithm to overwrite elements 1 and 3 selecetively with 4 and 5. This is an optimization routine where you sacrifice list order for speed.
 
 - **mixin**: Mixing two lists while keeping their relative orders
 
