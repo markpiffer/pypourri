@@ -1,7 +1,7 @@
 import operator
 
 def binom_combi(n, k, delta=False, init_combi=None, init_dirs=None):
-       """'n over k': Generate binomial combinations like itertools.combinations, but in a order where
+       """'n choose k': Generate binomial combinations like itertools.combinations, but in a order where
     two consecutive combinations will differ for each place in at most one position.
     I.e. for a 3-combination out of string "abcdef" you get "abc", "abd", "abe" etc. and no position
     in the 3-character string will jump more than +/-1 in the source set - you will get "abf", "acf"
