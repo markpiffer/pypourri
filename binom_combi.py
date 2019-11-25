@@ -1,13 +1,17 @@
-import itertools
 import operator
 
-
 def binom_combi(n, k, delta=False, init_combi=None, init_dirs=None):
-    """'n over k': Generate binomial combinations like itertools.combinations, but in a order where
+       """'n over k': Generate binomial combinations like itertools.combinations, but in a order where
     two consecutive combinations will differ for each place in at most one position.
     I.e. for a 3-combination out of string "abcdef" you get "abc", "abd", "abe" etc. and no position
     in the 3-character string will jump more than +/-1 in the source set - you will get "abf", "acf"
-    instead of the lexical sort order "abf", "acd" of itertools.combinations"""
+    instead of the lexical sort order "abf", "acd" of itertools.combinations. n can be an integer, then
+    all numeric combinations are generated, or an arbitrary list of elements, then the itertools.combinations
+    interface is mimicked. init_combi if given is a list of integers of length exactly k and denotes a
+    starting combination of indices, where all prior combinations will be skipped then.
+    init_dirs (also length k) is the "direction" in which elements will count up (+1) or down (-1) in the
+    next combination step - only such directions where "the way isn't blocked" by another adjacent element
+    make sense. Elements at highest indices are moved first"""
     try:
         r = [None] + list(n) # try access as iterable
         n = len(r)-1
@@ -91,6 +95,7 @@ for p in r:
     test_dict[p] = True
 print(cnt)
 cnt = 0
+import itertools
 for p in itertools.combinations(n,k):
     test_dict.pop(p)
     cnt += 1
