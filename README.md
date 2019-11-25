@@ -12,3 +12,8 @@ A collection of Python code that proved useful over the years
 - **mixin**: Mixing two lists while keeping their relative orders
 
   From two lists e.g. [1,2,3] and [a,b,c] create all permutations where 1 *never* comes after 2, a *never* after b, etc.: [1,a,2,3,b,c], [1,a,b,2,c,3],...
+
+- **binom_combi**: Generate the binomial coefficient combinations (or just the deltas) in a special order, avoiding big jumps in source set
+
+  'n over k': Generate binomial combinations like itertools.combinations, but in a order where two consecutive combinations will differ for each place in at most one position. I.e. for a 3-combination out of string "abcdef" you get "abc", "abd", "abe" etc. and no position
+in the 3-character string will jump more than +/-1 in the source set - you will get "abf", "acf" instead of the lexical sort order "abf", "acd" of itertools.combinations.
