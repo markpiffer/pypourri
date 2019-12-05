@@ -3,9 +3,9 @@ import operator
 def binom_combi(n, k, delta=False, init_combi=None, init_dirs=None):
        """'n choose k': Generate binomial combinations like itertools.combinations, but in a order where
     two consecutive combinations will differ for each place in at most one position.
-    I.e. for a 3-combination out of string "abcdef" you get "abc", "abd", "abe" etc. and no position
-    in the 3-character string will jump more than +/-1 in the source set - you will get "abf", "acf"
-    instead of the lexical sort order "abf", "acd" of itertools.combinations. n can be an integer, then
+    I.e. for a 3-combination out of string  "abcdefgh" you get "abc", "abd", "abe" etc. and no position
+    in the 3-character string will jump more than +/-1 in the source set - you will get "abh", "ach" instead 
+    of the lexical sort order "abh", "acd" of itertools.combinations. n can be an integer, then
     all numeric combinations are generated, or an arbitrary list of elements, then the itertools.combinations
     interface is mimicked. init_combi if given is a list of integers of length exactly k and denotes a
     starting combination of indices, where all prior combinations will be skipped then.
