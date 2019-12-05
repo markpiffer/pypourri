@@ -15,5 +15,5 @@ A collection of Python code that proved useful over the years
 
 - **binom_combi**: Generate the binomial coefficient combinations (or just the deltas) in a special order, avoiding big jumps in source set
 
-  'n choose k': Generate binomial combinations like itertools.combinations, but in a order where two consecutive combinations will differ for each place in at most one position. I.e. for a 3-combination out of string "abcdef" you get "abc", "abd", "abe" etc. and no position
-in the 3-character string will jump more than +/-1 in the source set - you will get "abf", "acf" instead of the lexical sort order "abf", "acd" of itertools.combinations.
+  'n choose k': Generate binomial combinations like itertools.combinations, but in a order where two consecutive combinations will differ for each place in at most one position. I.e. for a 3-combination out of string "abcdefgh" you get "abc", "abd", "abe" etc. and no position
+in the 3-character string will jump more than +/-1 in the source set - you will get "abh", "ach" instead of the lexical sort order "abh", "acd" of itertools.combinations.
