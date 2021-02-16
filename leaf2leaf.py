@@ -39,4 +39,4 @@ seven = node(7,eight,nine,ten)
 six = node(6,None,seven)
 one = node(1,two,six)
 
-print_root2root(one,[])
+print_leaf2leaf(one,[])
