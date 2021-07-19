@@ -40,3 +40,14 @@ six = node(6,None,seven)
 one = node(1,two,six)
 
 print_leaf2leaf(one,[])
+# Output:
+# 5 3 2 4 
+# 5 3 2 1 6 7 8 
+# 4 2 1 6 7 8 
+# 5 3 2 1 6 7 9 
+# 4 2 1 6 7 9 
+# 8 7 9 
+# 5 3 2 1 6 7 10 
+# 4 2 1 6 7 10 
+# 8 7 10 
+# 9 7 10 
