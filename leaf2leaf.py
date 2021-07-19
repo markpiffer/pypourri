@@ -1,5 +1,5 @@
 def print_leaf2leaf(root, path_down):
-"""Emit all paths from one leaf to another in a tree.""" 
+    """Emit all paths from one leaf to another in a tree.""" 
     for st in path_down:
         st.append(root)
     if all([x is None for x in root.children]):
@@ -10,7 +10,7 @@ def print_leaf2leaf(root, path_down):
     else:
         path_up = []
         for child in root.children:
-            path_up += child is not None and [st+[root] for st in print_root2root(child, path_down + path_up)] or []
+            path_up += child is not None and [st+[root] for st in print_leaf2leaf(child, path_down + path_up)] or []
     for st in path_down:
         st.pop()
     return path_up
